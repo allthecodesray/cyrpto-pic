@@ -1,0 +1,21 @@
+.col1{
+	float:left;
+
+}
+
+.col2{
+
+	float:center;
+}
+
+
+.col3{
+
+	float:right;
+
+}
+
+label{
+	display:block;
+
+}

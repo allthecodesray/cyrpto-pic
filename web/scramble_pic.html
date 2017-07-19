@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- HTML5 doctype -->
+
+<html lang="en"> <!-- HTML5 opening HTML tag with language. The HTML tag can also be used on it's own now. -->
+
+	<head>
+		
+		<meta charset="UTF-8"> <!-- HTML5 charset -->
+<link rel="stylesheet" type="text/css" href="css/style.css">		
+		<title>Scramble Your Images</title>
+		
+		
+	</head>
+	<body>
+
+	<h1>Scramble Your Images</h1>
+
+<div class="container">
+	
+	<form>
+
+	<div class="col1">
+ 	<img id="plain_image">
+		<script>
+		var output = document.getElementById('plain_image');
+		output.src = "images/default_img.png"
+  		var loadFile = function(event) {
+    		var reader = new FileReader();
+    		reader.onload = function(){
+      		var output = document.getElementById('plain_image');
+      		output.src = reader.result;
+    		};
+    		reader.readAsDataURL(event.target.files[0]);
+  		};
+	</script>
+
+	
+
+		<!--Input elements go here-->
+
+			<label>
+				Image to Encrypt:
+			<input type="file" accept="image/*" onchange="loadFile(event)" name="image_sel1" />
+			</label>
+
+			<label>
+			Encrypt Password:
+			<input type="password" name="password"/>
+			</label>
+	</div>
+	<div class="col2">
+			<button name="submit">
+			<strong>Encrypt Image</strong>
+			</button>
+
+	
+	</div>
+
+	<div class="col3">
+
+	<img id="encypt_image" src="images/no_encrypt.png">
+
+	</div>		
+
+</form>
+</div>
+
+
+
+	</body>
+</html>
